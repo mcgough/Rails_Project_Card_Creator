@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1>Ballplayers</h1>
+</div>
+<div class='col-md-6 col-md-offset-3'>
+  <div class="table-responsive table">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Player Name</th>
+          <th>Team</th>
+          <th>Postion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @player.each do |p| %>
+          <tr>
+            <td><%= link_to p.name, p %></td>
+            <td><%= p.team %></td>
+            <td><%= p.position %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <a href='/players/new' class='btn btn-primary' style='margin: auto'>Add Player</a>
+</div>

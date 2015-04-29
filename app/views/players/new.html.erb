@@ -1,0 +1,13 @@
+<h1>Add a Favorite Player</h1>
+
+<div class='col-md-4 col-md-offset-4'>
+<%= bootstrap_form_for (@player) do |f| %>
+
+  <%= f.text_field :name, placeholder: "Player's Name" %>
+
+  <%= f.text_field :team, placeholder: "Player's Team" %>
+
+  <%= f.text_field :position, placeholder: "Player's Position" %>
+  <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+<% end %>
+</div>
