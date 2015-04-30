@@ -1,26 +1,22 @@
-<div class="page-header">
+<div class='row'>
   <h1>Ballplayers</h1>
 </div>
-<div class='col-md-6 col-md-offset-3'>
-  <div class="table-responsive table">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Player Name</th>
-          <th>Team</th>
-          <th>Postion</th>
-        </tr>
-      </thead>
-      <tbody>
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3 ballplayers'>
+    <table>
+
+     <tbody>
         <% @player.each do |p| %>
           <tr>
-            <td><%= link_to p.name, p %></td>
+            <td class='players-index'><%= link_to p.name, p %></td>
             <td><%= p.team %></td>
-            <td><%= p.position %></td>
+            <td class='pull-right'><%= p.position %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
+</div>
+<div class='row text-center ballplayer-btn'>
   <a href='/players/new' class='btn btn-primary' style='margin: auto'>Add Player</a>
 </div>

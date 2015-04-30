@@ -1,0 +1,16 @@
+<div class='row'>
+  <h1><%= @tag.name %></h1>
+</div>
+<div class='row'>
+  <div class='col-md-4 col-md-offset-4'>
+    <table>
+      <% @players.each do |p| %>
+      <tr>
+        <td class='td-width'colspan="">
+          <%= link_to p.name, player_path(p.id) %>
+      <% end %>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -8,6 +8,7 @@
   <%= f.text_field :team, placeholder: "Player's Current Team" %>
 
   <%= f.text_field :position, placeholder: "Player's Position" %>
+  <%= f.collection_check_boxes :tag_ids, @tags, :id, :name %>
   <%= f.submit 'Submit', :class => 'btn btn-primary text-center' %>
 <% end %>
 
