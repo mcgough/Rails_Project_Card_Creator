@@ -8,11 +8,9 @@
   <%= f.text_field :team, placeholder: "Player's Team" %>
 
   <%= f.text_field :position, placeholder: "Player's Position" %>
+
+  <%= f.collection_check_boxes :tags, @tags, :id, :name %>
   <%= f.submit 'Submit', :class => 'btn btn-primary' %>
 </div>
-<div class='col-md-4'>
-  <%= f.collection_check_boxes :tags, @tags, :id, :name %>
-
-  </div>
 <% end %>
-</div>
+
