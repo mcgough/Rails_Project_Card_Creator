@@ -19,16 +19,19 @@ class PlayersController < ApplicationController
       @player.tags << Tag.find_by_id(tag_id) unless tag_id.blank?
     end
     if @player.save
-      redirect_to root_path
+      redirect_to players_path
     else
       render 'new'
     end
   end
 
   def show
+    FlickRaw.api_key = 'c99b362a3347f633cf04fb177571c38b'
+    FlickRaw.shared_secret = '5ccc00b6ce365997'
     @player = Player.find(params[:id])
     @tags = @player.tags
-    # render :json => @tags
+    @photos= flickr.photos.search(:text => "#{@player["name"]}",:per_page => 1,:tagged =>  "#{@player["team"]}", :sort => "relevance")
+    # render :json => @photos
   end
 
   def edit

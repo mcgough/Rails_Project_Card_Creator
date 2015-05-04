@@ -1,34 +1,70 @@
-<h1><%= @player.name %></h1>
-<div class='row'>
-  <div class='col-md-4 col-md-offset-4'>
-    <table class='players-index'>
-      <tr>
-        <td class='td-width'><%= @player.team %></td>
-      </tr>
-      <tr>
-        <td class='td-width'><%= @player.position %></td>
-      </tr>
-    </table>
-  </div>
-</div>
 
 <div class='row'>
-  <div class='col-md-4 col-md-offset-4'>
-    <h2 class='text-center'>Tagged</h2>
-    <table>
-      <% @tags.each do |n| %>
+<div class='col-md-4 col-md-offset-4'>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+  <div class="flipper">
+    <div class="front">
+      <table class='card-table'>
       <tr>
-        <td class='td-width'>
-          <%= link_to n.name, tag_path(n.id) %>
-        </td>
+      <td>
+        <h1 class='card-name'><%= @player.name %></h1>
+        <% @photos.each do |photo| %>
+
+        <div>
+          <img src="<%= "http://farm#{photo['farm']}.staticflickr.com/#{photo["server"]}/#{photo["id"]}_#{photo["secret"]}.jpg" %>" class='player-image'>
+        </div>
+        <% end %>
+        <div class='text-center player-team-position'>
+          <%= @player.team %>
+          <%= @player.position %>
+        </div>
+      </td>
       </tr>
-      <% end %>
-    </table>
-  </div>
-</div>
-<div class='row  text-center'>
-  <%= link_to '', edit_player_path, :class =>'btn btn-primary glyphicon glyphicon-pencil' %>
-  <%= link_to '', player_path, :class =>'btn btn-danger glyphicon glyphicon-trash danger',
+      </table>
+    </div>
+    <div class="back">
+      <table class='card-table-back'>
+      <tr>
+      <td>
+        <h1 class='card-name-back'><%= @player.name %></h1>
+        <table class='stat-table-inner'>
+        <tr>
+          <td>
+            <h2 class='text-center stat-table-inner-title'>Tags</h2>
+
+          </td>
+        </tr>
+        <tr>
+        <td>
+          <ul class='player-tag-list'>
+            <% @tags.each do |tag| %>
+
+              <li class='stat-tag'><%= link_to tag.name, tag_path(tag.id) %></li>
+            <% end %>
+          </ul>
+         </td>
+         </tr>
+         <tr>
+         <td>
+        <div class='row  text-center'>
+  <%= link_to '', edit_player_path, :class =>'btn btn-primary btn-xs glyphicon glyphicon-pencil' %>
+  <%= link_to '', player_path, :class =>'btn btn-danger btn-xs glyphicon glyphicon-trash danger',
         method: :delete,
         data: {confirm: 'Are you sure?'} %>
 </div>
+        </td>
+        </tr>
+        </table>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+

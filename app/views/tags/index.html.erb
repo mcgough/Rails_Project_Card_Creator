@@ -1,20 +1,29 @@
-<h1>Available Tags</h1>
 <div class='row'>
-  <table class='col-md-4 col-md-offset-4'>
-    <% @tags.each do |tag| %>
+  <table class='col-md-4 col-md-offset-4 tag-index-table'>
     <tr>
-      <td class='td-width'>
-        <%= link_to tag.name, tag_path(tag.id) %>
-      </td>
-      <td class='td-width'>
-        <%= link_to '', tag_path(tag.id), :class =>'btn btn-danger glyphicon glyphicon-trash danger pull-right',
-              method: :delete,
-              data: {confirm: 'Are you sure?'} %>
+      <td class='tag-index-title-width text-center'>
+        <h1 class='tag-index-title'>Created Tags</h1>
       </td>
     </tr>
+    <tr>
+      <td>
+
+        <div class='row text-center create-new-tag-btn'>
+          <%= link_to 'Create New Tag', new_tag_path, :class => 'btn btn-primary btn-xs' %>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <ul>
+    <% @tags.each do |tag| %>
+        <li class='created-tag-list-item'><%= link_to tag.name, tag_path(tag.id), :class => 'tag-index-link ' %>
+        <%= link_to '', tag_path(tag.id), :class =>'btn btn-danger btn-xs glyphicon glyphicon-trash danger pull-right',
+              method: :delete,
+              data: {confirm: 'Are you sure?'} %></li>
     <% end %>
+        </ul>
+      </td>
+    </tr>
   </table>
-</div>
-<div class='row text-center'>
-  <%= link_to 'Add Tag', new_tag_path, :class => 'btn btn-primary' %>
 </div>

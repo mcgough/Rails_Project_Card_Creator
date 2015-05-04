@@ -1,30 +1,126 @@
 body {
-  background-image: url(http://www.gabrielmontoya.com/wp-content/uploads/2014/05/1.jpg);
+  background-image: url(http://sjcrown.com/wp-content/uploads/2013/06/Baseball-in-Grass.jpg);
   color: white;
   font-family: 'Merriweather', serif;
 }
-
-h1 {
+.player-index-list-title {
+  margin-bottom: -10px;
+}
+.create-card-btn-div {
+  padding-top: 15px;
+}
+.tag-index-table {
+  background-image: url(http://www.soultravelmultimedia.com/wp-content/uploads/2011/06/Paper-Textures-22-624x1024.jpg);
+  background-size: cover;
+}
+.tag-index-title {
   text-align: center;
-  margin-top: 2em;
+}
+.tag-index-title-width {
+  width: 40em;
+}
+.create-new-tag-btn {
+  margin-top: -20px;
+}
+.created-tag-list-item {
+  list-style: circle;
+  list-style-position: inside;
+}
+.player-index-li {
+  list-style: none;
+}
+.tag-index-link {
+  font-size: 20px;
 }
 h1,
 h2 {
   font-style: italic;
+  /*text-shadow: 2px 2px 2px black;*/
+}
+.stats {
+  margin-top: -50px;
+  color: black;
+  /*text-shadow: 1px 1px 1px black;*/
+}
+.title-div {
+  margin-top: 10em;
+  color: white;
   text-shadow: 2px 2px 2px black;
 }
-.title {
-  color: white;
-}
+.title,
 .title:hover {
+  font-size: 3em;
   color: white;
-  font-size: 1em;
 }
-
-img {
-  margin-top: 50px;
-  border-radius: 20%;
-  opacity: 0.75;
+.tag-show-table-list,
+.player-index-table {
+  background-image: url(http://www.soultravelmultimedia.com/wp-content/uploads/2011/06/Paper-Textures-22-624x1024.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.new-tag-title,
+.new-card-title {
+  text-shadow: 2px 2px 2px black;
+}
+.card-table {
+  margin-top: 3em;
+  background-image: url(http://www.soultravelmultimedia.com/wp-content/uploads/2011/06/Paper-Textures-22-624x1024.jpg);
+  background-size: contain;
+  /*box-shadow: 2px 2px 2px black;*/
+}
+.card-table-back {
+  margin-top: 3em;
+  height: 510px;
+  background-image: url(http://www.soultravelmultimedia.com/wp-content/uploads/2011/06/Paper-Textures-22-624x1024.jpg);
+  background-size: contain;
+}
+.stats-table {
+  margin-top: 3em;
+}
+.stat-table-inner-title {
+  margin-top: -25px;
+  padding-bottom: 50px;
+}
+.card-name-back,
+.card-name {
+  color: black;
+  text-shadow: 0;
+  margin-top: 10px;
+  text-align: center;
+}
+.card-name-back {
+  padding-bottom: 15px;
+}
+.player-image {
+  opacity: 1;
+  border-radius: 2%;
+  margin: 10px;
+  width: 300px;
+  height: 375px;
+  border: 2px solid white;
+}
+.stat-table-inner {
+  background-color: rgba(200, 108, 41,0.6);
+  opacity: 1;
+  margin: 10px;
+  width: 300px;
+  height: 375px;
+  border-radius: 2%; 
+  border: 1px solid white; 
+}
+.player-tag-list {
+  padding-top: 0px;
+}
+.player-tags {
+  margin-bottom: -20px;
+}
+.stat-tag {
+  /*color: white;*/
+  font-size: 20px;
+  /*text-shadow: 1px 1px 1px black;*/
+  margin-top: -60px;
+  list-style: circle;
+  list-style-position: inside;
 }
 a {
   color: black;
@@ -32,7 +128,7 @@ a {
 a:hover {
   color: black;
   text-decoration:none;
-  font-size: 1.1em;
+  /*font-size: 1.1em;*/
 }
 .btn,
 a.btn {
@@ -43,9 +139,6 @@ td {
   color: black;
   padding: 12px;
   font-size: 1.75em;
-  /*width: 20em;*/
-}
-.td-width {
   width: 20em;
 }
 label {
@@ -54,15 +147,76 @@ label {
 }
 table {
   background-color: white;
-  /*border-radius: 1%;*/
-  opacity: .65;
+  border-radius: 2%;
 }
 .alert {
   text-shadow: 0;
 }
-.ballplayers {
-  margin-left: 29%;
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+
+  /*border: 1px solid #ccc;*/
 }
-.ballplayer-btn {
-  margin-top: 12px;
+
+  .flip-container:hover .flipper,
+  .flip-container.hover .flipper {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 320px;
+  height: 427px;
+}
+
+.flipper {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+
+  -o-transition: 0.6s;
+  -o-transform-style: preserve-3d;
+
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+
+  /*background: #f8f8f8;*/
+}
+
+.front .name {
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  transform: rotate(-20deg);
 }

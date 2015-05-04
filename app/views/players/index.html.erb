@@ -1,22 +1,31 @@
 <div class='row'>
-  <h1>Ballplayers</h1>
 </div>
 <div class='row'>
-  <div class='col-md-6 col-md-offset-3 ballplayers'>
-    <table>
+  <div class='col-md-4 col-md-offset-4'>
+    <table class='player-index-table'>
+        <tr>
+          <td class='text-center'>
+            <h1 class='player-index-list-title'>Created Cards</h1>
+          </td>
+         <tr>
+          <td class='text-center create-card-btn-div'>
+            <a href='/players/new' class='btn btn-primary btn-xs' style='margin: auto'>Create New Card</a>
 
-     <tbody>
-        <% @player.each do |p| %>
+
+          </td>
+        </tr>
+        </tr>
           <tr>
-            <td class='players-index'><%= link_to p.name, p %></td>
-            <td><%= p.team %></td>
-            <td class='pull-right'><%= p.position %></td>
+            <td>
+            <ul>
+              <% @player.each do |p| %>
+              <li class='player-index-li'><%= link_to p.name, p %></li>
+              <% end %>
+            </ul>
+            </td>
+
           </tr>
-        <% end %>
-      </tbody>
     </table>
   </div>
 </div>
-<div class='row text-center ballplayer-btn'>
-  <a href='/players/new' class='btn btn-primary' style='margin: auto'>Add Player</a>
-</div>
+

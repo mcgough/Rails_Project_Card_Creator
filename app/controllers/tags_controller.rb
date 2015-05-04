@@ -2,10 +2,6 @@ class TagsController < ApplicationController
 
   def index
     @tags = Tag.all
-
-
-    # render :json => @tags
-    # @times = PlayersTags.where(tag_id:)
   end
 
   def new
