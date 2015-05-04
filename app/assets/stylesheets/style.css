@@ -27,7 +27,7 @@ body {
   list-style-position: inside;
 }
 .player-index-li {
-  list-style: none;
+  /*list-style: none;*/
 }
 .tag-index-link {
   font-size: 20px;

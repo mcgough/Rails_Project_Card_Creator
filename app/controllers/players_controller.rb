@@ -26,8 +26,7 @@ class PlayersController < ApplicationController
   end
 
   def show
-    FlickRaw.api_key = 'c99b362a3347f633cf04fb177571c38b'
-    FlickRaw.shared_secret = '5ccc00b6ce365997'
+
     @player = Player.find(params[:id])
     @tags = @player.tags
     @photos= flickr.photos.search(:text => "#{@player["name"]}",:per_page => 1,:tagged =>  "#{@player["team"]}", :sort => "relevance")
